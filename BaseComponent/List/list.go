@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
    @author katholikos katholik@mail.ccsf.edu
    @wechat 18601767221
@@ -9,5 +11,5 @@ package main
 */
 
 func main() {
-
+	fmt.Printf("===Hello World===")
 }
