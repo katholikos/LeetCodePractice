@@ -41,8 +41,14 @@ func twoSumWithMap(nums []int, target int) []int {
 func main()  {
 	num := []int {2,7,11,15}
 	target := 9
-	fmt.Print(twoSumWithSlice(num,target))
-	fmt.Print(twoSumWithMap(num,target))
+	fmt.Println(twoSumWithSlice(num,target))
+	fmt.Println(twoSumWithMap(num,target))
 
-
+	a := 36
+	ptr := &a
+	pptr := &ptr
+	fmt.Println(&a)
+	fmt.Println(pptr)// ptr地址
+	fmt.Println(*pptr)//a地址 *pptr == ptr
+	fmt.Println(**pptr)//a **pptr == *ptr == a
 }
