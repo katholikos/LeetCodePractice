@@ -37,6 +37,7 @@ type List interface {
 	Delete(index int) error //删除
 	String() string //返回字符串
 	checkIsFull() //检测内存
+	Iterator() Iterator
 }
 
 type ArrayList struct {
@@ -51,7 +52,7 @@ func NewArrayList() *ArrayList {
 	return list
 }
 
-func (list *ArrayList)Size() int {
+func (list *ArrayList) Size() int {
 	return list.ArraySize
 }
 
@@ -108,9 +109,6 @@ func (list *ArrayList) Clear()  {
 }
 
 func (list *ArrayList) Delete(index int) error  {
-	if index < 0 || index >= list.ArraySize {
-		return errors.New("索引越界")
-	}
 	list.DataStore = append(list.DataStore[:index],list.DataStore[index + 1:]...)
 	list.ArraySize--
 	return nil

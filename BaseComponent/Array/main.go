@@ -12,13 +12,17 @@ import (
 
 func main() {
 	list := ArrayList.NewArrayList()
-	list.Append(1)
-	list.Append(2)
-	list.Append(3)
-	fmt.Println(list.DataStore)
-	fmt.Println(list.ArraySize)
-	for i := 0; i<15; i++{
-		list.Insert(1,"插入")
-		fmt.Println(list.DataStore)
+	list.Append("a1")
+	list.Append("b2")
+	list.Append("c3")
+	for it := list.Iterator(); it.HasNext(); {
+		item,_ :=it.Next()
+		if item == "a1" {
+			it.Remove()
+			fmt.Println("成功删除")
+		}
+		fmt.Println(item)
+
 	}
+	fmt.Println(list)
 }
