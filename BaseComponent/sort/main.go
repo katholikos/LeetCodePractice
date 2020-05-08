@@ -12,7 +12,11 @@ import (
 */
 
 func main() {
-	arr := []int{6,2,2,10,45}
-	fmt.Println(arr)
-	fmt.Println(SortSource.QuickSort(arr))
+	arr := []int{1,9,6,3,4,8,7,2,5,0}
+	fmt.Println("OriginArray:",arr)
+	//fmt.Println("QuickSort:",SortSource.QuickSort(arr))
+	//fmt.Println("SelectSort:",SortSource.SelectSort(arr))
+	//fmt.Println("InsertSort:",SortSource.InsertSort(arr))
+	//fmt.Println("BubbleSort:",SortSource.BubbleSort(arr))
+	fmt.Println("HeapSort:",SortSource.HeapSort(arr))
 }
