@@ -9,6 +9,7 @@ import "errors"
    @abstract 数组迭代器
 */
 
+//抽象迭代器接口
 type Iterator interface {
 	HasNext() bool
 	Next()	(interface{},error)
@@ -16,14 +17,17 @@ type Iterator interface {
 	GetIndex() int
 }
 
+//抽象聚合接口
+
 type Iterable interface {
-	Iterator() Iterator	//构造初始化接口
+	Iterator() Iterator		//构造初始化接口
 }
 
 type ArrayListItrator struct {
-	list *ArrayList
-	currentIndex int
+	list *ArrayList		//迭代对象
+	currentIndex int 	//当前索引
 }
+
 
 func (list *ArrayList) Iterator() Iterator  {
 	it := new(ArrayListItrator)
@@ -31,7 +35,6 @@ func (list *ArrayList) Iterator() Iterator  {
 	it.list = list
 	return it
 }
-
 
 func (it *ArrayListItrator) HasNext() bool {
 	return it.currentIndex < it.list.ArraySize

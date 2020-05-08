@@ -21,13 +21,6 @@ type Stack struct {
 	currentSize int	//当前长度
 }
 
-func newStackArray() *Stack {
-	stack := new(Stack)
-	stack.dataSource = make([]interface{},0,10)
-	stack.capSize = 10
-	stack.currentSize = 0
-	return stack
-}
 
 func (newStack *Stack) Pop() interface{} {
 	if newStack.isEmpty() {
@@ -71,4 +64,13 @@ func (newStack *Stack) Clear() {
 
 func (newStack *Stack) Size() int {
 	return newStack.currentSize
+}
+
+
+func NewStackArray() *Stack {
+	stack := new(Stack)
+	stack.dataSource = make([]interface{},0,10)
+	stack.capSize = 10
+	stack.currentSize = 0
+	return stack
 }
