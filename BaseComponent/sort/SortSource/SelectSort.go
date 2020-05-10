@@ -4,6 +4,7 @@ package SortSource
    @author katholikos katholik@mail.ccsf.edu
    @version  07/05/2020 23:04
    @since Go1.13.5
+   @abstract:选择排序
 */
 func SelectSort(arr []int ) []int {
 	length := len(arr)

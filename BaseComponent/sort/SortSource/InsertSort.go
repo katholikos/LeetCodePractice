@@ -1,8 +1,10 @@
 package SortSource
 
 /*
+   @author katholikos katholik@mail.ccsf.edu
    @version  08/05/2020 14:52
    @since Go1.13.5
+   @abstract:插入排序
 */
 
 func InsertSort(arr []int) []int {

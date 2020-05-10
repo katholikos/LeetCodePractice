@@ -4,6 +4,7 @@ package SortSource
    @author katholikos katholik@mail.ccsf.edu
    @version  08/05/2020 14:51
    @since Go1.13.5
+   @abstract:冒泡排序
 */
 
 func BubbleSort(arr []int) []int {

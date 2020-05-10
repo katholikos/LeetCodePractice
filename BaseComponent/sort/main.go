@@ -18,5 +18,7 @@ func main() {
 	//fmt.Println("SelectSort:",SortSource.SelectSort(arr))
 	//fmt.Println("InsertSort:",SortSource.InsertSort(arr))
 	//fmt.Println("BubbleSort:",SortSource.BubbleSort(arr))
-	fmt.Println("HeapSort:",SortSource.HeapSort(arr))
+	//fmt.Println("HeapSort:",SortSource.HeapSort(arr))
+	//fmt.Println("ParitySort:",SortSource.ParitySort(arr))
+	fmt.Println("MergeSort",SortSource.MergeSort(arr))
 }

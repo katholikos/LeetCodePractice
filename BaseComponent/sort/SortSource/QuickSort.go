@@ -4,6 +4,7 @@ package SortSource
    @author katholikos katholik@mail.ccsf.edu
    @version  07/05/2020 21:47
    @since Go1.13.5
+   @abstract:快速排序
 */
 
 func QuickSort(arr []int) []int {
