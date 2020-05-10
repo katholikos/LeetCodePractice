@@ -9,6 +9,21 @@ import (
    @author katholikos katholik@mail.ccsf.edu
    @version  01/05/2020 20:03
    @since Go1.13.5
+   @abstract Implement ArrayList with list
+*/
+
+/*
+	ArrayList method
+	Size()	A public method which return the size of the list
+	Get()	A publice method to get all the elements at current list
+	Set()	A public method to modify a value in specific index
+	Insert()	A public method to insert a value into a specific index
+	Append()	A public method to append a new value in the back of the list
+	Clear()		A public method to clear all the elements
+	Delete()	A public method to delete a value in specific index
+	String()	A public method to return a arrayList with String type
+	checkIsFull()	A private method to check out the arraylist is full or not
+
 */
 
 
@@ -22,6 +37,7 @@ type List interface {
 	Delete(index int) error //删除
 	String() string //返回字符串
 	checkIsFull() //检测内存
+	Iterator() Iterator
 }
 
 type ArrayList struct {
@@ -36,7 +52,7 @@ func NewArrayList() *ArrayList {
 	return list
 }
 
-func (list *ArrayList)Size() int {
+func (list *ArrayList) Size() int {
 	return list.ArraySize
 }
 
@@ -66,7 +82,7 @@ func (list *ArrayList) Set(index int, newVal interface{}) error{
 
 func  (list *ArrayList) checkIsFull()  {
 	if list.ArraySize == cap(list.DataStore) {
-		newDataStore := make([]interface{},2*list.ArraySize,2*list.ArraySize)
+		newDataStore := make([]interface{},2*list.ArraySize,2*list.ArraySize)//len == cap or elements will be initialized to type of nil
 		copy(newDataStore,list.DataStore)
 		list.DataStore = newDataStore
 	}
@@ -93,9 +109,6 @@ func (list *ArrayList) Clear()  {
 }
 
 func (list *ArrayList) Delete(index int) error  {
-	if index < 0 || index >= list.ArraySize {
-		return errors.New("索引越界")
-	}
 	list.DataStore = append(list.DataStore[:index],list.DataStore[index + 1:]...)
 	list.ArraySize--
 	return nil
